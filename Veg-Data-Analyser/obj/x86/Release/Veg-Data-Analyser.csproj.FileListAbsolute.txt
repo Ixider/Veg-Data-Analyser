@@ -1,0 +1,2 @@
+F:\GitHub\Veg-Data-Analyser\Veg-Data-Analyser\bin\x86\Release\Veg-Data-Analyser.exe.config
+F:\GitHub\Veg-Data-Analyser\Veg-Data-Analyser\obj\x86\Release\Veg-Data-Analyser.csproj.ResolveComReference.cache

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TasksModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="VegContext" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Tasks" EntityType="TasksModel.Task" />
+  </EntityContainer>
+  <EntityType Name="Task">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="task_number" Type="Int32" />
+    <Property Name="assesment" Type="Boolean" />
+    <Property Name="inspection" Type="Boolean" />
+    <Property Name="notice" Type="Boolean" />
+    <Property Name="fellortrim" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="assesment_date" Type="DateTime" Precision="0" />
+    <Property Name="meters_exposed" Type="Int32" />
+    <Property Type="DateTime" Name="assessment_date" Precision="0" />
+  </EntityType>
+</Schema>

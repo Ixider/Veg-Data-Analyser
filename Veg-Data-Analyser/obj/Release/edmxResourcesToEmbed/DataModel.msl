@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelsStoreContainer" CdmEntityContainer="Veg_Connection">
+    <EntitySetMapping Name="Tasks">
+      <EntityTypeMapping TypeName="Models.Task">
+        <MappingFragment StoreEntitySet="Tasks">
+          <ScalarProperty Name="task_progress" ColumnName="task_progress" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="task_number" ColumnName="task_number" />
+          <ScalarProperty Name="assesment" ColumnName="assesment" />
+          <ScalarProperty Name="inspection" ColumnName="inspection" />
+          <ScalarProperty Name="notice" ColumnName="notice" />
+          <ScalarProperty Name="fellortrim" ColumnName="fellortrim" />
+          <ScalarProperty Name="assessment_date" ColumnName="assessment_date" />
+          <ScalarProperty Name="meters_exposed" ColumnName="meters_exposed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

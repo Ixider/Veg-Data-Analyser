@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Models.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ModelsStoreContainer">
+    <EntitySet Name="Tasks" EntityType="Models.Store.Tasks" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Tasks">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="task_number" Type="int" />
+    <Property Name="task_progress" Type="varchar(max)" />
+    <Property Name="assesment" Type="varchar(max)" />
+    <Property Name="inspection" Type="varchar(max)" />
+    <Property Name="notice" Type="varchar(max)" />
+    <Property Name="fellortrim" Type="varchar(max)" />
+    <Property Name="assessment_date" Type="date" />
+    <Property Name="meters_exposed" Type="int" />
+  </EntityType>
+</Schema>

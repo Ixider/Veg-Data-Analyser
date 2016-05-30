@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Models.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="ModelsStoreContainer">
+          <EntitySet Name="Tasks" EntityType="Models.Store.Tasks" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Tasks">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="task_number" Type="int" />
+          <Property Name="task_progress" Type="varchar(max)" />
+          <Property Name="assesment" Type="varchar(max)" />
+          <Property Name="inspection" Type="varchar(max)" />
+          <Property Name="notice" Type="varchar(max)" />
+          <Property Name="fellortrim" Type="varchar(max)" />
+          <Property Name="assessment_date" Type="date" />
+          <Property Name="meters_exposed" Type="int" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Models" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Veg_Connection" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Tasks" EntityType="Models.Task" />
+        </EntityContainer>
+        <EntityType Name="Task">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="task_number" Type="Int32" />
+          <Property Name="assesment" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="inspection" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="notice" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="fellortrim" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="assessment_date" Type="DateTime" Precision="0" />
+          <Property Name="meters_exposed" Type="Int32" />
+          <Property Type="String" Name="task_progress" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelsStoreContainer" CdmEntityContainer="Veg_Connection">
+          <EntitySetMapping Name="Tasks">
+            <EntityTypeMapping TypeName="Models.Task">
+              <MappingFragment StoreEntitySet="Tasks">
+                <ScalarProperty Name="task_progress" ColumnName="task_progress" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="task_number" ColumnName="task_number" />
+                <ScalarProperty Name="assesment" ColumnName="assesment" />
+                <ScalarProperty Name="inspection" ColumnName="inspection" />
+                <ScalarProperty Name="notice" ColumnName="notice" />
+                <ScalarProperty Name="fellortrim" ColumnName="fellortrim" />
+                <ScalarProperty Name="assessment_date" ColumnName="assessment_date" />
+                <ScalarProperty Name="meters_exposed" ColumnName="meters_exposed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
