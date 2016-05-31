@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Veg-Data-Analyser.exe" size="28672">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Veg-Data-Analyser.exe" size="29184">
       <assemblyIdentity name="Veg-Data-Analyser" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>u/FsNhGC5C/5cjnkWEPZ5/10Z+jvrahgMixyhNviZBw=</dsig:DigestValue>
+        <dsig:DigestValue>cHQlK2yUXK1gS8bFHaGTEWmypz+CdBQAWG3T8+QeAzs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

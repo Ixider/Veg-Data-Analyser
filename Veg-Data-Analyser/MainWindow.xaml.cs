@@ -54,54 +54,82 @@ namespace Veg_Data_Analyser
 
         private void needsNoticeButton_Click(object sender, RoutedEventArgs e)
         {
-            manager.ApplyNeedsNoticeFilter();
-            resetCheckBoxs();
+            clearFilters();
+            manager.ApplyAssessmentAndNoNoticeFilter();
+        }
+
+        private void hasNoticeButton_Click(object sender, RoutedEventArgs e)
+        {
+            clearFilters();
+            manager.ApplyAssessmentAndHasNoticeFilter();
+            
         }
 
         private void clearFiltersButton_Click(object sender, RoutedEventArgs e)
         {
-            manager.GetAllTasks();
             resetCheckBoxs();
+            manager.GetAllTasks();
         }
 
+        // Task Progess Items
         private void Open_Checked(object sender, RoutedEventArgs e)
         {
             CheckBox s = (CheckBox)sender;
             bool c = s.IsChecked.Value;
-            if (manager != null) 
-                manager.FilterTaskProgress("Open", c);
+            sendCheckBoxData(0, "Open", c); // String litterals are not a good idea //TODO change to enum
         }
 
         private void InProgress_Checked(object sender, RoutedEventArgs e)
         {
             CheckBox s = (CheckBox)sender;
             bool c = s.IsChecked.Value;
-            if (manager != null)
-                manager.FilterTaskProgress("In Progress", c);
+            sendCheckBoxData(0, "In Progress", c);
         }
 
         private void Cancelled_Checked(object sender, RoutedEventArgs e)
         {
             CheckBox s = (CheckBox)sender;
             bool c = s.IsChecked.Value;
-            if (manager != null)
-                manager.FilterTaskProgress("Cancelled", c);
+            sendCheckBoxData(0, "Cancelled", c);
         }
 
         private void Closed_Checked(object sender, RoutedEventArgs e)
         {
             CheckBox s = (CheckBox)sender;
             bool c = s.IsChecked.Value;
-            if (manager != null)
-                manager.FilterTaskProgress("Closed", c);
+            sendCheckBoxData(0, "Closed", c);
         }
 
         private void OnHold_Checked(object sender, RoutedEventArgs e)
         {
             CheckBox s = (CheckBox)sender;
             bool c = s.IsChecked.Value;
-            if (manager != null)
-                manager.FilterTaskProgress("On Hold", c);
+            sendCheckBoxData(0, "On Hold", c);
+        }
+
+        private void sendCheckBoxData(int i, string s, bool b)
+        {
+            if (!isManagerNull())
+            {
+                manager.FilterTaskItems(i, s, b);
+            }
+        }
+
+        private bool isManagerNull()
+        {
+            if (manager == null)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        // Should be called before applying anyfilter
+        private void clearFilters()
+        {
+            resetCheckBoxs();
+            manager.GetAllTasks();
         }
 
         private void resetCheckBoxs()
@@ -112,6 +140,5 @@ namespace Veg_Data_Analyser
             ClosedCheckBox.IsChecked = true;
             OnHoldCheckBox.IsChecked = true;
         }
-
     }
 }

@@ -16,8 +16,6 @@ namespace Veg_Data_Analyser.Data
     public class DatabaseManager
     {
 
-        public enum DataField { TaskNo = 0, TaskProgress = 1, Assesment = 2, Inspection = 3, Notice = 4, FellOrTrim = 5, AssessmentDate = 6, MetersExposed = 7 };  
-
         public DatabaseManager()
         {
 
@@ -34,7 +32,8 @@ namespace Veg_Data_Analyser.Data
             }
         }
 
-        public List<Task> GetTasksNeedingNotice()
+        //Get all tasks that have assesment and no notice
+        public List<Task> GetTasksWithAssessmentAndNoNotice()
         {
             using (var db = new Veg_Connection())
             {

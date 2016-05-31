@@ -36,9 +36,22 @@ namespace Veg_Data_Analyser
             GetAllTasks();
         }
 
-        public void ApplyNeedsNoticeFilter()
+        public void ApplyAssessmentAndNoNoticeFilter()
         {
-            tasks = databaseManager.GetTasksNeedingNotice();
+            tasks = databaseManager.GetTasksWithAssessmentAndNoNotice();
+            updateTasks();
+        }
+
+        public void ApplyAssessmentAndHasNoticeFilter()
+        {
+            foreach (Task t in tasks.ToList())
+            {
+                if (t.assesment == "No" || t.notice == "No")
+                {
+                    tasks.Remove(t);
+                }
+            }
+
             updateTasks();
         }
 
@@ -48,19 +61,18 @@ namespace Veg_Data_Analyser
             updateTasks();
         }
 
-        public void FilterTaskProgress(string name, bool isChecked) 
+        public void FilterTaskItems(int checkBoxSetIdent,string name, bool isChecked) 
         {
             // Determins if checkbox is being checked or unchecked
             if (!isChecked)
             {
-                removalTaskProgressItems(name);
-
+                removeTaskProgressItems(name);
             }
             else
             {
                 addTaskProgressItems(name);
             }
-
+      
             sortTasks();
             updateTasks();
         }
@@ -81,7 +93,7 @@ namespace Veg_Data_Analyser
         }
 
         //Removes all tasks with the specified froup from the main tasks list
-        private void removalTaskProgressItems(string group)
+        private void removeTaskProgressItems(string group)
         {
             foreach (Task t in tasks.ToList())
             {
@@ -105,6 +117,8 @@ namespace Veg_Data_Analyser
                 }
             }
         }
+
+
 
     }
 }

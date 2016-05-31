@@ -16,8 +16,8 @@
 
         <Button x:Name="importButton" Content="Import Data" HorizontalAlignment="Left" Margin="10,588,0,0" VerticalAlignment="Top" Width="123" FontWeight="Bold" Height="25" Click="importButton_Click" Background="White"/>
         <Button x:Name="ClearData" Content="Clear Data" HorizontalAlignment="Left" Margin="10,618,0,0" VerticalAlignment="Top" Width="123" RenderTransformOrigin="0.48,22.45" FontWeight="Bold" Height="25" Click="ClearData_Click" Background="Red" FontFamily="Verdana" Foreground="White"/>
-        <Button x:Name="needsNoticeButton" Content="Needs Notice" HorizontalAlignment="Left" Margin="19,10,0,0" VerticalAlignment="Top" Width="100" Height="33" Click="needsNoticeButton_Click" Background="White"/>
-        <Button x:Name="clearFiltersButton" Content="Clear Filters" HorizontalAlignment="Left" Margin="19,48,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="-1.977,2.15" Height="33" Click="clearFiltersButton_Click" Background="White"/>
+        <Button x:Name="needsNoticeButton" Content="Assesment and no Notice" HorizontalAlignment="Left" Margin="10,48,0,0" VerticalAlignment="Top" Width="201" Height="33" Click="needsNoticeButton_Click" Background="White"/>
+        <Button x:Name="clearFiltersButton" Content="Clear Filters" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="-1.977,2.15" Height="33" Click="clearFiltersButton_Click" Background="White" BorderBrush="#FF049331" BorderThickness="2"/>
 
         <DataGrid x:Name="taskDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="327,13,10,13" RowDetailsVisibilityMode="VisibleWhenSelected" IsReadOnly="True">
             <DataGrid.Columns>
@@ -38,16 +38,17 @@
                 <DataGridTextColumn x:Name="task_progressColumn" Binding="{Binding task_progress}" Header="Task Progress" Width="*"/>   
             </DataGrid.Columns>
         </DataGrid>
-        <CheckBox x:Name="OpenCheckBox" Content="Open" HorizontalAlignment="Left" Margin="31,124,0,0" VerticalAlignment="Top" Checked="Open_Checked" IsChecked="True" Unchecked="Open_Checked"/>
-        <CheckBox x:Name="InProgressCheckBox" Content="In Progress" HorizontalAlignment="Left" Margin="31,144,0,0" VerticalAlignment="Top" Checked="InProgress_Checked" IsChecked="True" Unchecked="InProgress_Checked"/>
-        <CheckBox x:Name="CancelledCheckBox" Content="Cancelled" HorizontalAlignment="Left" Margin="31,164,0,0" VerticalAlignment="Top" Checked="Cancelled_Checked" IsChecked="True" Unchecked="Cancelled_Checked"/>
-        <CheckBox x:Name="OnHoldCheckBox" Content="On Hold" HorizontalAlignment="Left" Margin="31,204,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Checked="OnHold_Checked" IsChecked="True" Unchecked="OnHold_Checked" />
-        <CheckBox x:Name="ClosedCheckBox" Content="Closed" HorizontalAlignment="Left" Margin="31,184,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.169,0.4" Checked="Closed_Checked" IsChecked="True" Unchecked="Closed_Checked"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="137" Margin="19,96,0,0" VerticalAlignment="Top" Width="100">
+        <CheckBox x:Name="OpenCheckBox" Content="Open" HorizontalAlignment="Left" Margin="228,78,0,0" VerticalAlignment="Top" Checked="Open_Checked" IsChecked="True" Unchecked="Open_Checked"/>
+        <CheckBox x:Name="InProgressCheckBox" Content="In Progress" HorizontalAlignment="Left" Margin="228,98,0,0" VerticalAlignment="Top" Checked="InProgress_Checked" IsChecked="True" Unchecked="InProgress_Checked"/>
+        <CheckBox x:Name="CancelledCheckBox" Content="Cancelled" HorizontalAlignment="Left" Margin="228,118,0,0" VerticalAlignment="Top" Checked="Cancelled_Checked" IsChecked="True" Unchecked="Cancelled_Checked"/>
+        <CheckBox x:Name="OnHoldCheckBox" Content="On Hold" HorizontalAlignment="Left" Margin="228,158,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Checked="OnHold_Checked" IsChecked="True" Unchecked="OnHold_Checked" />
+        <CheckBox x:Name="ClosedCheckBox" Content="Closed" HorizontalAlignment="Left" Margin="228,138,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.169,0.4" Checked="Closed_Checked" IsChecked="True" Unchecked="Closed_Checked"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="137" Margin="216,50,0,0" VerticalAlignment="Top" Width="100">
             <Label Content="Task Status&#xD;&#xA;" Margin="0,0,0,109" FontWeight="Bold"/>
         </Border>
-        <Label Content="Total Tasks :" HorizontalAlignment="Left" Margin="144,13,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label x:Name="totalLabel" Content="0" HorizontalAlignment="Left" Margin="226,13,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Total Tasks :" HorizontalAlignment="Left" Margin="169,13,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="totalLabel" Content="0" HorizontalAlignment="Left" Margin="251,13,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Button x:Name="hasNoticeButton" Content="Assesment and has Notice" HorizontalAlignment="Left" Margin="10,86,0,0" VerticalAlignment="Top" Width="201" Height="33" Click="hasNoticeButton_Click" Background="White"/>
 
 
 

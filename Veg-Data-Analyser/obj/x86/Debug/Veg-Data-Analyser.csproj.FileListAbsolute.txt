@@ -20,3 +20,4 @@ F:\GitHub\Veg-Data-Analyser\Veg-Data-Analyser\obj\x86\Debug\Veg-Data-Analyser.ex
 F:\GitHub\Veg-Data-Analyser\Veg-Data-Analyser\obj\x86\Debug\Veg-Data-Analyser.application
 F:\GitHub\Veg-Data-Analyser\Veg-Data-Analyser\obj\x86\Debug\Veg-Data-Analyser.exe
 F:\GitHub\Veg-Data-Analyser\Veg-Data-Analyser\obj\x86\Debug\Veg-Data-Analyser.pdb
+F:\GitHub\Veg-Data-Analyser\Veg-Data-Analyser\obj\x86\Debug\Veg-Data-Analyser.csprojResolveAssemblyReference.cache
